@@ -1,0 +1,109 @@
+@font-face{
+  font-family: 'CarmenLocal';
+  src: url('resources/shrifty/carmen.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root{
+  --bg-grad: linear-gradient(180deg, rgb(0,0,0) 14.4%, rgb(8,16,21) 19.7%, rgb(14,31,32) 32.7%, rgb(5,8,13) 55.8%, rgb(13,15,27) 100%);
+  --text-grey: #ffebd8;
+  --gold-1: #ffe7c3;
+  --gold-2: #bc7a1d;
+  --gold-3: #e59d2b;
+  --gold-btn-grad: radial-gradient(ellipse 105% 105% at 50% 0%, #fbdcaf 0%, #eeab4b 36%, #b87e29 62%, #9d6817 74%, #82520e 87%, #7c8685 100%);
+  --gold-bar-grad: radial-gradient(ellipse 105% 105% at 50% 0%, #e9b469 0%, #bd8f46 50%, #c7923f 100%);
+  --font-display: 'Carmen', 'CarmenLocal', 'Yeseva One', serif;
+  --font-body: 'Alegreya', serif;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html, body{
+  background: #000;
+  overflow-x: hidden;
+}
+
+.stage-outer{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.stage{
+  position: relative;
+  background: var(--bg-grad);
+  transform-origin: top left;
+  will-change: transform;
+}
+
+.abs{
+  position: absolute;
+}
+
+img.abs{
+  display: block;
+  max-width: none;
+}
+
+img.deco{
+  object-fit: cover;
+}
+
+img.card{
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.t-grey{
+  font-family: var(--font-body);
+  color: var(--text-grey);
+  text-shadow: 0 0 60px rgba(255,255,255,0.35);
+}
+.t-white{
+  font-family: var(--font-body);
+  color: #fff;
+  text-shadow: 0 0 60px rgba(255,255,255,0.35);
+}
+.t-grey.center, .t-white.center{ text-align: center; }
+
+.t-gold{
+  font-family: var(--font-display);
+  background: linear-gradient(180deg, var(--gold-1) 25%, var(--gold-2) 73%, var(--gold-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 50px rgba(255,255,255,0.12);
+  white-space: nowrap;
+  width: max-content;
+}
+.t-gold.center{ margin: 0 auto; text-align: center; }
+.t-gold.wrap{ white-space: normal; width: 100%; }
+
+.t-display{
+  font-family: var(--font-display);
+}
+
+.btn{
+  border: none;
+  border-radius: 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: #090b14;
+  background: var(--gold-btn-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn:hover{ filter: brightness(1.1); }
+.btn--tinted{
+  color: var(--text-grey);
+  background-blend-mode: normal;
+  background-image: linear-gradient(90deg, rgba(42,45,28,0.5), rgba(42,45,28,0.5)), var(--gold-btn-grad);
+  box-shadow: 0 0 19.3px rgba(255,255,255,0.62);
+}
+
+.faq-line{
+  height: 1px;
+  background: #e0ac63;
+}
